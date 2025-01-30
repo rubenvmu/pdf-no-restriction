@@ -1,4 +1,4 @@
-# pikepdf-pdf-no-restriction
+# pdf-no-restriction
 
 Este es un script en Python que utiliza la biblioteca `pikepdf` para desbloquear las restricciones de un archivo PDF. El objetivo de este script es permitir a los usuarios remover restricciones de acceso, como copiar texto, imprimir o editar un documento PDF protegido.
 
