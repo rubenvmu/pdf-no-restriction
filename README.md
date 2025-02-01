@@ -1,34 +1,33 @@
-# 📄 PDF No Restriction Tool
+# pdfnorestriction
 
-PDF No Restriction Tool es una herramienta de línea de comandos desarrollada para eliminar restricciones de documentos PDF de forma eficiente y confiable. Esta aplicación, compilada y gestionada mediante Cargo, utiliza el poder del programa externo **qpdf** para llevar a cabo el proceso de desencriptación. El proyecto es un claro ejemplo de cómo la innovación tecnológica puede potenciar la libertad individual y el acceso sin trabas, valores que se alinean con una perspectiva liberal en cuanto a la promoción de la iniciativa privada y la mínima intervención estatal.
+PDF No Restriction Tool is a command-line utility designed to efficiently and reliably remove restrictions from PDF documents. This application, compiled and managed using Cargo, harnesses the power of the external program **qpdf** to perform the decryption process. The project stands as a clear example of how technological innovation can empower individual freedom and grant unfettered access to information—values that resonate with a liberal outlook favoring private initiative and minimal state intervention.
 
 ---
 
 ## 🔍 Overview
 
-El propósito de PDF No Restriction Tool es empoderar a sus usuarios al desbloquear archivos PDF que han sido restringidos, restaurando así el acceso completo a su contenido. La herramienta se encarga de normalizar las rutas de archivos utilizando la normalización Unicode (NFC) y, posteriormente, invoca a **qpdf** mediante una llamada al sistema para ejecutar la operación de desencriptación.  
-Esta solución técnica destaca la importancia de aplicar prácticas de desarrollo modernas para sortear limitaciones burocráticas, reafirmando la creencia en la autonomía y el libre mercado.
+The primary objective of PDF No Restriction Tool is to empower users by unlocking restricted PDF files, thereby restoring complete access to their content. The tool first normalizes file paths using Unicode Normalization Form C (NFC) and then invokes **qpdf** via a system call to execute the decryption operation. This technical solution underscores the importance of employing modern development practices to overcome bureaucratic constraints, reaffirming a commitment to autonomy and free-market principles.
 
 ---
 
 ## ✨ Features
 
-- **Desencriptación Eficiente**: Utiliza **qpdf** para eliminar restricciones sin comprometer la integridad del documento.  
-- **Manejo Robusto de Errores**: Notifica claramente si el archivo no existe o si ocurre algún error durante el proceso, garantizando transparencia en cada paso.  
-- **Normalización Unicode**: Implementa NFC para asegurar que las rutas con caracteres especiales se gestionen correctamente.  
-- **Interfaz de Línea de Comandos**: Ofrece una experiencia de usuario directa y amigable, facilitando su integración en flujos de trabajo automatizados.  
-- **Código Moderno y Responsivo**: La aplicación se mantiene actualizada y se construye siguiendo las prácticas más vanguardistas del desarrollo de software, en sintonía con el espíritu emprendedor y la defensa del mercado libre.
+- **Efficient Decryption**: Leverages **qpdf** to remove restrictions without compromising the document's integrity.  
+- **Robust Error Handling**: Clearly notifies the user if the file does not exist or if any error occurs during the process, ensuring complete transparency at every step.  
+- **Unicode Normalization**: Implements NFC to guarantee that file paths containing special characters are handled correctly.  
+- **Command-Line Interface**: Provides a straightforward and user-friendly interface that facilitates integration into automated workflows.  
+- **Modern and Responsive Code**: Built using contemporary software development practices, the application is continuously updated, reflecting an entrepreneurial spirit and a strong defense of free enterprise.
 
 ---
 
 ## ⚙️ Installation
 
-Para utilizar PDF No Restriction Tool, se deben cumplir los siguientes requisitos previos:
+To use PDF No Restriction Tool, the following prerequisites must be met:
 
-1. **Rust y Cargo**: El proyecto se gestiona con Cargo, por lo que se recomienda tener instalada la versión estable más reciente de Rust. Las instrucciones de instalación están disponibles en [rust-lang.org](https://www.rust-lang.org/).  
-2. **qpdf**: Este programa externo es indispensable para la operación de desencriptación. Se pueden encontrar las instrucciones de instalación en el [repositorio de qpdf](https://github.com/qpdf/qpdf).
+1. **Rust and Cargo**: The project is managed with Cargo, so it is recommended that the latest stable version of Rust be installed. Installation instructions are available at [rust-lang.org](https://www.rust-lang.org/).  
+2. **qpdf**: This external program is essential for the decryption operation. Installation instructions can be found on the [qpdf GitHub repository](https://github.com/qpdf/qpdf).
 
-Una vez satisfechas las dependencias, el usuario puede compilar y ejecutar la herramienta con los siguientes comandos:
+Once these dependencies are satisfied, the user may compile and run the tool using the following commands:
 
 ```bash
 git clone https://github.com/rubenvmu/pdfnorestriction.git
@@ -43,55 +42,47 @@ cargo build
 
 ## 🚀 Usage
 
-Al ejecutar la herramienta, se solicita al usuario que introduzca la ruta del archivo PDF a desbloquear. El flujo de operación es el siguiente:
+When the tool is executed, it prompts the user to enter the path of the PDF file to be unlocked. The operation proceeds as follows:
 
-1. Se inicia el script, mostrando un mensaje de bienvenida similar a:  
+1. The script is initiated, displaying a welcome message similar to:  
    ```
    PDF No Restriction Tool by @https://github.com/rubenvmu
-   Introduzca la ruta del archivo PDF de entrada:
+   Please enter the path of the PDF file to unlock:
    ```
-2. Una vez ingresada la ruta, la aplicación verifica la existencia del archivo, normaliza la cadena de caracteres y procede a invocar **qpdf** para eliminar las restricciones.  
-3. Si el proceso es exitoso, se genera un mensaje de confirmación indicando la ubicación del nuevo archivo (con el sufijo `_unlocked.pdf`).
+2. After the path is entered, the application checks for the file’s existence, normalizes the file path, and then calls **qpdf** to remove the restrictions.  
+3. If the process is successful, a confirmation message is displayed, indicating the location of the newly generated file (which carries the suffix `_unlocked.pdf`).
 
-Este procedimiento simboliza la eficacia técnica y el compromiso con la libertad de información, aspectos que resuenan en un contexto de respeto a la iniciativa individual y la eficiencia en el uso de los recursos tecnológicos.
+This procedure symbolizes both technical efficacy and a commitment to information freedom—principles that align with a respect for individual initiative and efficient resource utilization.
 
 ---
 
 ## 🛠️ Technical Details
 
-El código del proyecto se compone de los siguientes elementos clave:
+The project’s code is comprised of several key elements:
 
-- **Operaciones de I/O**: Se utilizan las librerías estándar de Rust para interactuar con el usuario.  
-- **Normalización Unicode**: Se emplea el crate `unicode_normalization` para garantizar el correcto manejo de caracteres especiales en las rutas de archivo.  
-- **Ejecución de Comandos del Sistema**: Se invoca a **qpdf** mediante `std::process::Command`, permitiendo que la herramienta se integre de forma segura con el sistema operativo.  
-- **Gestión de Errores**: Se implementan controles que verifican la existencia del archivo y se proporciona retroalimentación inmediata ante cualquier inconveniente.
+- **I/O Operations**: It employs Rust’s standard libraries to interact with the user.  
+- **Unicode Normalization**: The `unicode_normalization` crate is used to ensure the proper handling of special characters in file paths.  
+- **System Command Execution**: **qpdf** is invoked through `std::process::Command`, which allows the tool to interface safely with the operating system.  
+- **Error Management**: The code includes checks to verify the existence of the file and provides immediate feedback if any issues arise.
 
-Cada uno de estos componentes se estructura de manera clara y mantenible, lo que refleja un enfoque profesional y comprometido con el desarrollo de software seguro y confiable.
+Each component is structured in a clear and maintainable manner, reflecting a professional approach and a dedication to secure, reliable software development.
 
 ---
 
 ## 🤝 Contributing
 
-La colaboración es bienvenida y valorada en PDF No Restriction Tool. Se invita a otros desarrolladores a participar en la mejora continua del proyecto mediante:
+Contributions to PDF No Restriction Tool are both welcomed and highly valued. Developers interested in enhancing the project are encouraged to participate by:
 
-- **Forking** el repositorio.
-- Creación de ramas específicas para nuevas funcionalidades o corrección de errores.
-- Envío de pull requests con descripciones detalladas de los cambios.
-- Adherencia a las directrices de codificación establecidas para mantener la coherencia en la base de código.
+- **Forking** the repository.  
+- Creating feature branches for new functionalities or bug fixes.  
+- Submitting pull requests with detailed descriptions of the changes.  
+- Adhering to the established coding guidelines to maintain consistency throughout the codebase.
 
-La contribución a este proyecto se considera una acción de fomento de la innovación y el desarrollo tecnológico responsable, en línea con los principios de una sociedad que promueve el libre emprendimiento y la competencia en el mercado.
+Contributing to this project is seen as an act that fosters innovation and responsible technological development, in keeping with the principles of a society that values entrepreneurial freedom and market competition.
 
 ---
 
 ## 📜 License
 
-PDF No Restriction Tool se distribuye bajo una licencia de código abierto que permite su uso, modificación y distribución, siempre y cuando se cumplan los términos estipulados en el archivo LICENSE incluido en el repositorio.  
-Esta apertura legal refuerza el compromiso con la transparencia y la colaboración en la comunidad tecnológica.
+PDF No Restriction Tool is distributed under an open-source license that permits use, modification, and distribution, provided that the terms outlined in the LICENSE file included in the repository are followed. This legal openness reinforces the project’s commitment to transparency and collaborative development within the technological community.
 
----
-
-## 🏁 Final Remarks
-
-PDF No Restriction Tool representa una síntesis de excelencia técnica y principios de libertad individual. La herramienta demuestra cómo la modernidad en el desarrollo de software puede combinarse con una filosofía de libre mercado y responsabilidad personal, eliminando barreras innecesarias para el acceso a la información.  
-Con un enfoque en la eficiencia y la autonomía, este proyecto se posiciona como una propuesta de vanguardia para quienes valoran la iniciativa privada y la innovación sin trabas burocráticas.  
-Para más detalles, discusión o soporte, se invita a visitar el repositorio en [GitHub](https://github.com/rubenvmu/pdfnorestriction) y a participar activamente en la comunidad.
