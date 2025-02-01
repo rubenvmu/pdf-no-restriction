@@ -95,7 +95,3 @@ Esta apertura legal refuerza el compromiso con la transparencia y la colaboraci�
 PDF No Restriction Tool representa una síntesis de excelencia técnica y principios de libertad individual. La herramienta demuestra cómo la modernidad en el desarrollo de software puede combinarse con una filosofía de libre mercado y responsabilidad personal, eliminando barreras innecesarias para el acceso a la información.  
 Con un enfoque en la eficiencia y la autonomía, este proyecto se posiciona como una propuesta de vanguardia para quienes valoran la iniciativa privada y la innovación sin trabas burocráticas.  
 Para más detalles, discusión o soporte, se invita a visitar el repositorio en [GitHub](https://github.com/rubenvmu/pdfnorestriction) y a participar activamente en la comunidad.
-
----
-
-Este README, adornado con emojis y diseñado con un estilo profesional, refleja el compromiso de sus desarrolladores con la calidad, la transparencia y el progreso tecnológico.
